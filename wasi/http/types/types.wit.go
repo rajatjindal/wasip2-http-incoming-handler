@@ -1487,13 +1487,13 @@ func (self ResponseOutparam) wasmimport_ResourceDrop()
 //	error-code>)
 //
 //go:nosplit
-func ResponseOutparamSet(param ResponseOutparam, response cm.ErrResult[OutgoingResponse, ErrorCode]) {
+func ResponseOutparamSet(param ResponseOutparam, response cm.OKResult[OutgoingResponse, ErrorCode]) {
 	wasmimport_ResponseOutparamSet(param, response)
 }
 
 //go:wasmimport wasi:http/types@0.2.0 [static]response-outparam.set
 //go:noescape
-func wasmimport_ResponseOutparamSet(param ResponseOutparam, response cm.ErrResult[OutgoingResponse, ErrorCode])
+func wasmimport_ResponseOutparamSet(param ResponseOutparam, response cm.OKResult[OutgoingResponse, ErrorCode])
 
 // StatusCode represents the imported type "wasi:http/types@0.2.0#status-code".
 //

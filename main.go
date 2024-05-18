@@ -8,8 +8,8 @@ import (
 
 func init() {
 	incominghandler.Handle = func(request types.IncomingRequest, responseOut types.ResponseOutparam) {
-		err := cm.Err[cm.ErrResult[types.OutgoingResponse, types.ErrorCode]](types.ErrorCodeConfigurationError())
-		types.ResponseOutparamSet(cm.ResourceNone, err)
+		err := cm.Err[cm.OKResult[types.OutgoingResponse, types.ErrorCode]](types.ErrorCodeConfigurationError())
+		types.ResponseOutparamSet(responseOut, err)
 	}
 }
 
